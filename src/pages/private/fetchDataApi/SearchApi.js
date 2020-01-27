@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import TextField from '@material-ui/core/TextField';
+import { Typography, Button } from '@material-ui/core';
+
 class SeacrhApi extends Component {
 
     state = {
@@ -43,13 +46,19 @@ class SeacrhApi extends Component {
         const { keyword } = this.state;
         return (
             <React.Fragment>
-                <h1>Data User</h1>
-                <input type="text" onChange={this.handleChange} value={keyword} />
-                <button
-                    onClick={this.handleSubmit}
+                <Typography variant="h4">Data User</Typography>
+                <TextField 
+                    id="standard-basic" 
+                    label="Search"
+                    onChange={this.handleChange}
+                    value={keyword}
+                />
+               <Button
+                    variant="contained"
+                    color="primary"
                 >
                     Submit
-                </button>
+               </Button>
             </React.Fragment>
         );
     }

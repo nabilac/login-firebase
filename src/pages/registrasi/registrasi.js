@@ -37,8 +37,7 @@ function Registrasi() {
         ulangi_password: ''
     })
 
-    const [isSubmitting, setSubmitting] = useState
-        (false);
+    const [isSubmitting, setSubmitting] = useState(false);
 
     const { auth, user, loading } = useFirebase();
 
@@ -86,8 +85,7 @@ function Registrasi() {
             try {
                 setSubmitting(true);
                 await
-                    auth.createUserWithEmailAndPassword
-                        (form.email, form.password)
+                    auth.createUserWithEmailAndPassword(form.email, form.password)
             } catch (e) {
                 const newError = {};
 

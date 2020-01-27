@@ -28,6 +28,9 @@ class App extends Component {
             <Switch>
               <PrivateRoute path="/" exact component={Private} />
               <PrivateRoute path="/fetchDataApi" component={Private} />
+              <PrivateRoute path="/reactContext" component={Private} />
+              <PrivateRoute path="/mahasiswa" component={Private} />
+              <PrivateRoute path="/user" component={Private} />
               <Route path="/registrasi" component={Registrasi} />
               <Route path="/login" component={Login} />
               <Route component={NotFound} />

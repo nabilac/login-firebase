@@ -36,8 +36,7 @@ function Login(props) {
         password: ''
     })
 
-    const [isSubmitting, setSubmitting] = useState
-        (false);
+    const [isSubmitting, setSubmitting] = useState(false);
 
     const { auth, user, loading } = useFirebase();
 
@@ -79,8 +78,7 @@ function Login(props) {
             try {
                 setSubmitting(true);
                 await
-                    auth.signInWithEmailAndPassword
-                        (form.email, form.password)
+                    auth.signInWithEmailAndPassword(form.email, form.password)
             } catch (e) {
                 const newError = {};
 

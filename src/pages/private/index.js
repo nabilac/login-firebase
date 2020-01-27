@@ -17,12 +17,19 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import SignOutIcon from '@material-ui/icons/ExitToApp';
 import HomeIcon from '@material-ui/icons/Home';
+import SearchIcon from '@material-ui/icons/Search';
+import PeopleIcon from '@material-ui/icons/People';
+import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
 
 import { Switch, Route } from 'react-router-dom';
 
 //Komponent Halaman Private
 import Home from './home';
 import FetchDataApi from './fetchDataApi';
+import ReactContext from './reactContext';
+import Mahasiswa from './mahasiswa';
+import User from './user';
+import ReactHooks from './reactHooks';
 
 //styles
 import useStyles from './styles';
@@ -107,12 +114,86 @@ export default function Dashboard() {
                             }}
                         >
                             <ListItemIcon>
-                                <HomeIcon />
+                                <SearchIcon />
                             </ListItemIcon>
                             <ListItemText primary="fetchDataApi" />
                         </ListItem>
                     }} />
-                   
+                    <Route path="/reactContext" children={(
+                        { match, history }) => {
+                        return <ListItem
+                            button
+                            selected={match ? true : false}
+                            onClick={() => {
+                                history.push('/reactContext/reactContext1')
+                            }}
+                        >
+                            <ListItemIcon>
+                                <PeopleIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="React Context" />
+                        </ListItem>
+                    }} />
+                    <Route path="/mahasiswa" children={(
+                        { match, history }) => {
+                        return <ListItem
+                            button
+                            selected={match ? true : false}
+                            onClick={() => {
+                                history.push('/mahasiswa/listMahasiswa1')
+                            }}
+                        >
+                            <ListItemIcon>
+                                <AccountBalanceIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="List Mahasiswa" />
+                        </ListItem>
+                    }} />
+                     <Route path="/user" children={(
+                        { match, history }) => {
+                        return <ListItem
+                            button
+                            selected={match ? true : false}
+                            onClick={() => {
+                                history.push('/user/alertUser')
+                            }}
+                        >
+                            <ListItemIcon>
+                                <AccountBalanceIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Alert User" />
+                        </ListItem>
+                    }} />
+                     <Route path="/user" children={(
+                        { match, history }) => {
+                        return <ListItem
+                            button
+                            selected={match ? false : false}
+                            onClick={() => {
+                                history.push('/user/regUser')
+                            }}
+                        >
+                            <ListItemIcon>
+                                <AccountBalanceIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="Registrasi User" />
+                        </ListItem>
+                    }} />
+                     <Route path="/reactHooks" children={(
+                        { match, history }) => {
+                        return <ListItem
+                            button
+                            selected={match ? true : false}
+                            onClick={() => {
+                                history.push('/reactHooks/reactHooks1')
+                            }}
+                        >
+                            <ListItemIcon>
+                                <AccountBalanceIcon />
+                            </ListItemIcon>
+                            <ListItemText primary="React Hooks" />
+                        </ListItem>
+                    }} />
                 </List>
             </Drawer>
 
@@ -120,7 +201,11 @@ export default function Dashboard() {
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container}>
                     <Switch>
+                        <Route path="/mahasiswa" component={Mahasiswa}/>
+                        <Route path="/reactContext" component={ReactContext}/>
                         <Route path="/fetchDataApi" component={FetchDataApi}/>
+                        <Route path="/user" component={User}/>
+                        <Route path="/reactHooks" component={ReactHooks}/>
                         <Route component={Home} />
                     </Switch>
                 </Container>
