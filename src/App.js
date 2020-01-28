@@ -31,6 +31,7 @@ class App extends Component {
               <PrivateRoute path="/reactContext" component={Private} />
               <PrivateRoute path="/mahasiswa" component={Private} />
               <PrivateRoute path="/user" component={Private} />
+              <PrivateRoute path="/reactHooks" component={Private} />
               <Route path="/registrasi" component={Registrasi} />
               <Route path="/login" component={Login} />
               <Route component={NotFound} />

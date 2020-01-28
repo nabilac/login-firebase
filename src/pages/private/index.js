@@ -20,6 +20,9 @@ import HomeIcon from '@material-ui/icons/Home';
 import SearchIcon from '@material-ui/icons/Search';
 import PeopleIcon from '@material-ui/icons/People';
 import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
+import AddAlertIcon from '@material-ui/icons/AddAlert';
+import AssignmentIcon from '@material-ui/icons/Assignment';
+import ExtensionIcon from '@material-ui/icons/Extension';
 
 import { Switch, Route } from 'react-router-dom';
 
@@ -159,7 +162,7 @@ export default function Dashboard() {
                             }}
                         >
                             <ListItemIcon>
-                                <AccountBalanceIcon />
+                                <AddAlertIcon />
                             </ListItemIcon>
                             <ListItemText primary="Alert User" />
                         </ListItem>
@@ -174,7 +177,7 @@ export default function Dashboard() {
                             }}
                         >
                             <ListItemIcon>
-                                <AccountBalanceIcon />
+                                <AssignmentIcon />
                             </ListItemIcon>
                             <ListItemText primary="Registrasi User" />
                         </ListItem>
@@ -189,7 +192,7 @@ export default function Dashboard() {
                             }}
                         >
                             <ListItemIcon>
-                                <AccountBalanceIcon />
+                                <ExtensionIcon />
                             </ListItemIcon>
                             <ListItemText primary="React Hooks" />
                         </ListItem>
